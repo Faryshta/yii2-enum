@@ -1,5 +1,7 @@
 <?php
 
+namespace faryshta\tests\data;
+
 use faryshta\base\EnumTrait;
 use faryshta\validators\EnumValidator;
 
@@ -26,7 +28,9 @@ class Person extends Model
 
     public function rules()
     {
-        return [['gender'], EnumValidator::className()];
+        return [
+            [['gender'], EnumValidator::className()]
+        ];
     }
 
     public function getGenderDesc()

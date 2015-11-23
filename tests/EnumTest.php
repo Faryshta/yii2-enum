@@ -1,8 +1,7 @@
 <?php
-namespace yiiunit\extensions\redis;
+namespace faryshta\tests;
 
 use faryshta\tests\data\Person;
-use yiiunit\TestCase;
 
 /**
  * Test the functionality for the enum extension
