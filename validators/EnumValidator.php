@@ -4,6 +4,8 @@ namespace faryshta\validators;
 
 use faryshta\base\EnsureEnumTrait;
 
+use Yii;
+use     yii\helpers\ArrayHelper;
 use yii\validators\Validator;
 use yii\validators\ValidationAsset;
 
@@ -22,6 +24,11 @@ use yii\validators\ValidationAsset;
 class EnumValidator extends Validator
 {
     use EnsureEnumTrait;
+
+    /**
+     * @inhertidoc
+     */
+    public $skipOnEmpty = false;
 
     /**
      * @var boolean whether the comparison is strict (both type and value must be the same)
@@ -54,9 +61,11 @@ class EnumValidator extends Validator
      */
     protected function validateValue($value)
     {
-        return ArrayHelper::isIn($value, array_keys($this->enum), $this->strict)
-            ? null
-            : [$this->message, []];
+        return ArrayHelper::keyExists(
+                $value,
+                array_keys($this->enum),
+                $this->strict
+            ) ? null : [$this->message, []];
     }
 
     /**
