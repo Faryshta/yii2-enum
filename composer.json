@@ -19,10 +19,6 @@
         "issues": "https://github.com/Faryshta/yii2-enum/issues?state=open",
         "source": "https://github.com/Faryshta/yii2-enum"
     },
-    "minimum-stability": "dev",
-    "replace": {
-        "yiisoft/yii2": "self.version"
-    },
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "*"
