@@ -63,7 +63,7 @@ class EnumValidator extends Validator
     {
         return ArrayHelper::keyExists(
                 $value,
-                array_keys($this->enum),
+                $this->enum,
                 $this->strict
             ) ? null : [$this->message, []];
     }
