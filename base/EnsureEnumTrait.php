@@ -11,6 +11,9 @@ use yii\helpers\ArrayHelper;
  */
 trait EnsureEnumTrait
 {
+    /**
+     * @var array the enum to be used for the component.
+     */
     protected $enum;
 
     /**

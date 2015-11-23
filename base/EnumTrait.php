@@ -65,34 +65,35 @@ trait EnumTrait
     }
 
     /**
-     * Search the name of a catalogue and returns its indexed terms.
+     * Search an enum based on its name
      *
-     * @param string $name catalogue to find
+     * @param string $name enum to find
      * @return array|null the indexed terms or null if there is no catalogue
      */
     public static function getEnum($name)
     {
-        return ArrayHelper::getValue(self::ensureEnumss(), $name);
+        return ArrayHelper::getValue(self::ensureEnums(), $name);
     }
 
     /**
-     * Gets the terminology of an index inside a catalogue.
+     * Gets the description of an index inside an enum.
+     *
      * @param string $name the name of the enum where the search is performed
      * @param string $index the index to find
      * @return mixed the catalogue defined term or null if not found
      */
     public static function getEnumDesc($name, $index)
     {
-        return in_array($index, [null, ''], true) // return null on empty index 
+        return in_array($index, [null, ''], true) // return null on empty index
             ? null
             : ArrayHelper::getValue(self::getEnum($name), $index);
     }
 
     /**
-     * Search on the description of an attribute
+     * Returns the enum description of an attribute
      *
      * @param string $attribute the attribute to find
-     * @return mixed the catalogue defined term or null if not found
+     * @return mixed the description defined on the enum or null if not found
      */
     public function getAttributeDesc($attribute)
     {

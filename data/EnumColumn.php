@@ -13,7 +13,7 @@ use yii\helpers\ArrayHelper;
  */
 class EnumColumn extends DataColumn
 {
-    use ensureEnumTrait;
+    use EnsureEnumTrait;
 
     /**
      * @inhertidoc
@@ -24,7 +24,7 @@ class EnumColumn extends DataColumn
 
         $this->ensureEnum($this->grid->filterModel, $this->attribute);
 
-        if (empty($this->value)) {
+        if ($this->value === null) {
             $this->value = function ($model, $key, $index, $column) {
                 return ArrayHelper::getValue(
                     $this->enum,
@@ -33,7 +33,6 @@ class EnumColumn extends DataColumn
             };
         }
 
-        $model = $this->grid->filterModel;
         if ($this->filter === null) {
             $this->filter = $this->enum;
         }
