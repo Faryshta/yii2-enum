@@ -48,7 +48,9 @@ trait EnumTrait
      *
      * @return array
      */
-    abstract public static function enums();
+    public static function enums() {
+        return [];
+    }
 
     /**
      * Saves the enums on a variable to avoid repeating operations like
