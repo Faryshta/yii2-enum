@@ -67,7 +67,7 @@ class EnumValidator extends Validator
         $this->ensureEnum($model, $attribute);
 
         $options = [
-            'range' => $this->enum,
+            'range' => array_keys($this->enum),
             'not' => false,
             'message' => Yii::$app->getI18n()->format($this->message, [
                 'attribute' => $model->getAttributeLabel($attribute),
