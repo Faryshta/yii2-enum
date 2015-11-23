@@ -8,7 +8,7 @@ use yii\base\Html;
 use yii\widgets\InputWidget;
 
 /**
- * Creates a dropdown list for 
+ * Creates a dropdown list using an enum.
  */
 class Enum extends InputWidget
 {
