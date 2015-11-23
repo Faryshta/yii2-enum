@@ -13,7 +13,7 @@
             "name": "Angel (Faryshta) Guevara",
             "email": "angeldelcaos@gmail.com",
             "role": "Founder and project lead"
-        },
+        }
     ],
     "support": {
         "issues": "https://github.com/Faryshta/yii2-enum/issues?state=open",
