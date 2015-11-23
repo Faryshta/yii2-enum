@@ -5,6 +5,7 @@ namespace faryshta\validators;
 use faryshta\base\EnsureEnumTrait;
 
 use yii\validators\Validator;
+use yii\validators\ValidationAsset;
 
 /**
  * Validates that the attribute value is among the index list in an enum
