@@ -83,7 +83,9 @@ trait EnumTrait
      */
     public static function getEnumDesc($name, $index)
     {
-        return ArrayHelper::getValue(self::getEnum($name), $index);
+        return in_array($index, [null, ''], true) // return null on empty index 
+            ? null
+            : ArrayHelper::getValue(self::getEnum($name), $index);
     }
 
     /**
