@@ -15,13 +15,13 @@ trait EnsureEnumTrait
 
     /**
      * @var string Class name from where the enum will be taken. If null  the
-     * class of the model being validated will be used instead.
+     * class of the model will be used instead
      */
     public $enumClass;
 
     /**
      * @var string name of the enum to be used. If null the name of the
-     * attribute being validated will be used instead.
+     * attribute being will be used instead.
      */
     public $enumName;
 
