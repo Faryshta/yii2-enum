@@ -34,7 +34,7 @@ trait EnsureEnumTrait
     public function ensureEnum($model, $attribute)
     {
         $enumClass = $this->enumClass ?: get_class($model);
-        $enunName = $this->enumName ?: $attribute;
+        $enumName = $this->enumName ?: $attribute;
 
         if (!method_exists($enumClass, 'getEnum')) {
             throw new InvalidConfigException('The model must use the '
