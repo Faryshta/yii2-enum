@@ -3,6 +3,9 @@ namespace faryshta\tests;
 
 use faryshta\tests\data\Person;
 
+use faryshta\widgets\Enum as EnumWidget;
+use faryshta\data\EnumColumn;
+
 /**
  * Test the functionality for the enum extension
  */
@@ -51,5 +54,20 @@ class EnumTest extends TestCase
 
         $model->gender = Person::GENDER_FEMALE;
         $this->assertTrue($model->validate());
+    }
+
+    public function testWidget()
+    {
+        $html = <<<HTML
+<select id="w0" name="gender">
+<option value="F">Female</option>
+<option value="M">Male</option>
+</select>
+HTML;
+        $this->assertEquals($html, EnumWidget::widget([
+            'name' => 'gender',
+            'enumClass' => Person::className(),
+            'enumName' => 'gender',
+        ]));
     }
 }

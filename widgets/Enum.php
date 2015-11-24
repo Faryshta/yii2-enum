@@ -4,7 +4,7 @@ namespace faryshta\widgets;
 
 use faryshta\base\EnsureEnumTrait;
 
-use yii\base\Html;
+use yii\helpers\Html;
 use yii\widgets\InputWidget;
 
 /**
