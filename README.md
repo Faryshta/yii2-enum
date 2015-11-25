@@ -101,12 +101,13 @@ class Person extends \yii\base\Model
 }
 ```
 
-### Widget Enum
+### Enum Widgets
 
 In a view file
 
 ```php
-use faryshta\widgets\Enum;
+use faryshta\widgets\EnumDropdown;
+use faryshta\widgets\EnumRadio;
 
 /**
  * @var Person $model
@@ -114,20 +115,24 @@ use faryshta\widgets\Enum;
  */
 
 // with ActiveForm
-echo $form->field($person, 'gender')->widget(Enum::className());
+echo $form->field($person, 'gender')->widget(EnumDropdown::className());
 
 // without ActiveForm and with model.
-echo Enum::widget([
+echo EnumDropdown::widget([
     'model' => $person,
     'attribute' => 'gender',
 ]);
 
 // without Model
-echo Enum::widget([
+echo EnumDropdown::widget([
     'name' => 'gender',
     'enumClass' => Person::className(),
     'enumName' => 'gender',
 ]);
+
+// The same applies for the EnumRadio widget if you want to render a
+// list of radio buttons
+echo $form->field($person, 'gender')->widget(EnumRadio::className());
 ```
 
 ### EnumColumn
