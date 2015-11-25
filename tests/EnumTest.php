@@ -3,7 +3,8 @@ namespace faryshta\tests;
 
 use faryshta\tests\data\Person;
 
-use faryshta\widgets\Enum as EnumWidget;
+use faryshta\widgets\EnumDropdown;
+use faryshta\widgets\EnumRadio;
 use faryshta\data\EnumColumn;
 
 /**
@@ -64,7 +65,17 @@ class EnumTest extends TestCase
 <option value="M">Male</option>
 </select>
 HTML;
-        $this->assertEquals($html, EnumWidget::widget([
+        $this->assertEquals($html, EnumDropdown::widget([
+            'name' => 'gender',
+            'enumClass' => Person::className(),
+            'enumName' => 'gender',
+        ]));
+
+        $html = <<<HTML
+<div id="w1"><label><input type="radio" name="gender" value="F"> Female</label>
+<label><input type="radio" name="gender" value="M"> Male</label></div>
+HTML;
+        $this->assertEquals($html, EnumRadio::widget([
             'name' => 'gender',
             'enumClass' => Person::className(),
             'enumName' => 'gender',

@@ -2,42 +2,27 @@
 
 namespace faryshta\widgets;
 
-use faryshta\base\EnsureEnumTrait;
-
 use yii\helpers\Html;
-use yii\widgets\InputWidget;
 
 /**
  * Creates a dropdown list using an enum.
  */
-class Enum extends InputWidget
+class EnumRadio extends EnumBase
 {
-    use EnsureEnumTrait;
-
-    /**
-     * @inheritdoc
-     * @throws InvalidConfigException if the "mask" property is not set.
-     */
-    public function init()
-    {
-        parent::init();
-        $this->ensureEnum($this->model, $this->attribute);
-    }
-
     /**
      * @inheritdoc
      */
     public function run()
     {
         if ($this->hasModel()) {
-            echo Html::activeDropDownList(
+            echo Html::activeRadioList(
                 $this->model,
                 $this->attribute,
                 $this->enum,
                 $this->options
             );
         } else {
-            echo Html::dropDownList(
+            echo Html::radioList(
                 $this->name,
                 $this->value,
                 $this->enum,
