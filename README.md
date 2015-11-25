@@ -1,4 +1,4 @@
-Faryshta Yii2 ESnum
+Faryshta Yii2 Enum
 ==================
 
 [![Latest Stable Version](https://poser.pugx.org/faryshta/yii2-enum/v/stable)](https://packagist.org/packages/faryshta/yii2-enum) [![Total Downloads](https://poser.pugx.org/faryshta/yii2-enum/downloads)](https://packagist.org/packages/faryshta/yii2-enum) [![Latest Unstable Version](https://poser.pugx.org/faryshta/yii2-enum/v/unstable)](https://packagist.org/packages/faryshta/yii2-enum) [![License](https://poser.pugx.org/faryshta/yii2-enum/license)](https://packagist.org/packages/faryshta/yii2-enum)
@@ -153,9 +153,9 @@ echo GridView::widget([
         // name of the attribute being validated
         // 'enumName' => 'gender'
     ],
-]);	
+]);
 ```
 
 ## License
 
-**yii2-widget-datepicker** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
+**Faryshta Yii2 Enum** is released under the BSD 3-Clause License. See the bundled `LICENSE.md` for details.
