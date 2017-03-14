@@ -61,7 +61,7 @@ class Person extends \yii\base\Model
 
 ```php
 use faryshta\base\EnumTrait;
-use faryshta\validator\EnumValidator;
+use faryshta\validators\EnumValidator;
 
 class Person extends \yii\base\Model
 {
